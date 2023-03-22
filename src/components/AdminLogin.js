@@ -23,9 +23,11 @@ const AdminLogin = () => {
   };
 
   return (
+    <div>
     <div className="signInPageContainer">
-    <h2>Sign In</h2>
+    <h2  >Sign In</h2>
     <form onSubmit={handleSignIn}>
+      
     <label htmlFor="email">Email </label>
     <input
     type="email"
@@ -34,7 +36,10 @@ const AdminLogin = () => {
     onChange={(event) => setEmail(event.target.value)}
     required
     />
+  
+   
     <br />
+    
     <label htmlFor="password">Password</label>
     <input
     type="password"
@@ -43,11 +48,15 @@ const AdminLogin = () => {
     onChange={(event) => setPassword(event.target.value)}
     required
     />
+    
+    
     <br />
-    <button type="submit">Sign In</button>
+    <button type="submit" className="signin-button">Sign In</button>
     </form>
     </div>
+</div>
     );
     };
     
     export default AdminLogin;
+
