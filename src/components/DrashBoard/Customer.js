@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import Navbar from './NavBar';
 
 const customers = [
-  { id: 1, name: 'John Doe', email: 'johndoe@example.com', isBlocked: false },
-  { id: 2, name: 'Jane Smith', email: 'janesmith@example.com', isBlocked: true },
-  { id: 3, name: 'Bob Johnson', email: 'bobjohnson@example.com', isBlocked: false },
+  { id: 1, name: 'Peter Parker', email: 'peterparker@example.com', isBlocked: false },
+  { id: 2, name: 'Tony Stark', email: 'tonystark@example.com', isBlocked: true },
+  { id: 3, name: 'steven strange', email: 'stevenstrange@example.com', isBlocked: false },
 ];
 
 const Customer = () => {
@@ -49,10 +49,12 @@ const Customer = () => {
   };
 
   return (
-    <div>
-        <Navbar/>
+    <>
+          <Navbar/>
+    <div className='container-customer'>
+  
       <h2>Customer List</h2>
-      <ul>
+      <ul className='cust-details'>
         {customerList.map((customer) => (
           <li key={customer.id}>
             {customer.name} ({customer.email})
@@ -68,14 +70,14 @@ const Customer = () => {
         ))}
       </ul>
       {selectedCustomer && (
-        <div>
+        <div className='selected-customer'>
           <h3>Selected Customer</h3>
           <p>Name: {selectedCustomer.name}</p>
           <p>Email: {selectedCustomer.email}</p>
           {editingCustomer ? (
             <div>
               <h4>Edit Customer</h4>
-              <form onSubmit={(e) => e.preventDefault()}>
+              <form onSubmit={(e) => e.preventDefault()} className="edit-customer-form">
                 <label>
                   Name:
                   <input
@@ -96,7 +98,6 @@ const Customer = () => {
                     }
                   />
                 </label>
-                <button onClick={() => setEditingCustomer(null)}>Cancel</button>
                 <button
                   onClick={() => {
                     const updatedList = customerList.map((c) => {
@@ -113,6 +114,9 @@ const Customer = () => {
                 >
                   Save
                 </button>
+                <br />
+                <button onClick={() => setEditingCustomer(null)}>Cancel</button>
+                
               </form>
             </div>
           ) : (
@@ -128,6 +132,7 @@ const Customer = () => {
         </div>
       )}
     </div>
+    </>
     );
     };
 

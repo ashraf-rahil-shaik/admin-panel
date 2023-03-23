@@ -7,7 +7,7 @@ function App() {
     <div className="App">
     <Routes>
                 <Route path='/' element ={<AdminLogin/>} />
-      
+    
               </Routes>
     
     </div>

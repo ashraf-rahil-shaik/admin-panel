@@ -132,4 +132,79 @@
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   }
+  .container-customer {
+
+    margin: auto;
+    padding: 20px;
+    display: flex;
+flex-direction: column;
+align-content: space-evenly;
+justify-content: center;
+     }
+  
+  h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .cust-details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+flex-direction: column;
+gap: 26px;
+
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  button {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #3e8e41;
+  }
+  
+  .selected-customer {
+    border: 2px solid #4caf50;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  
+  .selected-customer h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .selected-customer p {
+    margin-bottom: 5px;
+  }
+  
+  .edit-customer-form {
+    margin-top: 20px;
+  }
+  
+  .edit-customer-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .edit-customer-form input {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .edit-customer-form button {
+    margin-right: 10px;
+  }
   
