@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navbar from './NavBar';
+import './Home.css'
 
 function Home() {
   const [customers, setCustomers] = useState(0);
@@ -26,19 +27,45 @@ function Home() {
   }, []);
 
   return (
-    <div>
-        <Navbar/>
-      <h1>Admin Dashboard</h1>
+    <>
+    <Navbar/>
+    <h1>Admin Dashboard</h1>
+    <div className="container">
+  
 
-      <ul>
-        <li>No. of customers: {customers}</li>
-        <li>No. of drivers: {drivers}</li>
-        <li>No. of deliveries: {deliveries}</li>
-        <li>Total Canceled Deliveries: {canceledDeliveries}</li>
-        <li>Total warehouses: {warehouses}</li>
-        <li>Total Revenue: {revenue}</li>
-      </ul>
+
+      <div className="card">
+        <h2>No. of customers</h2>
+        <p>{customers}</p>
+      </div>
+
+      <div className="card">
+        <h2>No. of drivers</h2>
+        <p>{drivers}</p>
+      </div>
+
+      <div className="card">
+        <h2>No. of deliveries</h2>
+        <p>{deliveries}</p>
+      </div>
+
+      <div className="card">
+        <h2>Total Canceled Deliveries</h2>
+        <p>{canceledDeliveries}</p>
+      </div>
+
+      <div className="card">
+        <h2>Total warehouses</h2>
+        <p>{warehouses}</p>
+      </div>
+
+      <div className="card">
+        <h2>Total Revenue</h2>
+        <p>{revenue}</p>
+      </div>
+
     </div>
+    </>
   );
 }
 
