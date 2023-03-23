@@ -69,15 +69,18 @@ const Customer = () => {
           </li>
         ))}
       </ul>
-      {selectedCustomer && (
-        <div className='selected-customer'>
-          <h3>Selected Customer</h3>
-          <p>Name: {selectedCustomer.name}</p>
-          <p>Email: {selectedCustomer.email}</p>
-          {editingCustomer ? (
-            <div>
-              <h4>Edit Customer</h4>
-              <form onSubmit={(e) => e.preventDefault()} className="edit-customer-form">
+    
+
+{selectedCustomer && (
+  <div className='selected-customer'>
+    <h3>Selected Customer</h3>
+    <p>Name: {selectedCustomer.name}</p>
+    <p>Email: {selectedCustomer.email}</p>
+    {editingCustomer ? (
+      <div className="edit-customer">
+        <h4>Edit Customer</h4>
+        <form onSubmit={(e) => e.preventDefault()}>
+          {<form onSubmit={(e) => e.preventDefault()} className="edit-customer-form">
                 <label>
                   Name:
                   <input
@@ -117,23 +120,26 @@ const Customer = () => {
                 <br />
                 <button onClick={() => setEditingCustomer(null)}>Cancel</button>
                 
-              </form>
-            </div>
-          ) : (
-            <div>
-              <button onClick={() => setEditingCustomer(selectedCustomer)}>Edit</button>
-              {selectedCustomer.isBlocked ? (
+              </form>}
+        </form>
+      </div>
+    ) : (
+      <div>
+        <button onClick={() => handleEditCustomer(selectedCustomer)}>Edit</button>
+        {selectedCustomer.isBlocked ? (
                 <button onClick={() => handleUnblockCustomer(selectedCustomer)}>Unblock</button>
               ) : (
                 <button onClick={() => handleBlockCustomer(selectedCustomer)}>Block</button>
               )}
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-    </>
+              
+      </div>
+    )}
+  </div>
+)}
+            </div>        
+        </>
     );
     };
 
     export default Customer
+    

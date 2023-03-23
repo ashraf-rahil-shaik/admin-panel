@@ -46,6 +46,7 @@ const Navbar = () => {
           <p>Are you sure you want to log out?</p>
           <button onClick={handleConfirmLogout}>Yes</button>
           <button onClick={handleCancelLogout}>No</button>
+        
         </div>
       )}
     </nav>
